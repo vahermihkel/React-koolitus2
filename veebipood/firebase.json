@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "mihkel-veeb-03-23",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

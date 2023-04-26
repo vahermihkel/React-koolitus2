@@ -1,23 +1,28 @@
 import React, { useRef, useState } from 'react'
 
 function LisaToode() {
-  const [sonum, uuendaSonum] = useState("Lisa toode!");
-  const inputiLuger = useRef(); // ref -- loeb inputi seest väärtusi
-  // const nimiRef = useRef();
-  // const nimiViide = useRef();
+  const [sonum, uuendaSonum] = useState("Lisa uus toode!");
+  const inputiLuger = useRef();
 
-  // function lisa() {}
+  // function lisa() {}    täpselt sama mis alumine
 
   const lisa = () => {
-    uuendaSonum("Toode lisatud, nimega: " + inputiLuger.current.value);
+    // { tõene && <div>}
+    // <button disabled={tõene}>
+    // if(tõene) {SIIA BLOKKI} else {KUI ON MITTETÕENE}
+    if (inputiLuger.current.value === "") {
+      uuendaSonum("Tühja nimetusega ei saa toodet lisada!");
+    } else {
+      uuendaSonum("Toode lisatud: " + inputiLuger.current.value);
+    }
   }
 
   return (
     <div>
       <div>{sonum}</div>
-      <label>Uue toote nimi</label> <br />
+      <label>Toote nimi</label> <br />
       <input ref={inputiLuger} type="text" /> <br />
-      <button onClick={lisa}>Lisa</button> <br />
+      <button onClick={lisa}>Lisa toode</button> <br />
     </div>
   )
 }

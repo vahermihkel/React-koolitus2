@@ -1,6 +1,5 @@
 .pilt {
   width: 100px;
-  /* height: 100px; */
 }
 
 .pilt:hover {
@@ -9,11 +8,25 @@
 }
 
 .nupp {
-  border: 2px dotted blue;
+  border: 1px dotted green;
 }
 
 .nupp:hover {
-  cursor: pointer;
   text-decoration: underline;
-  border: 2px dotted green;
+  cursor: pointer;
+}
+
+.kuldne {
+  color: goldenrod;
+}
+
+.tume-leht {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+
+.hele-leht {
+  background-color: rgb(237, 237, 237);
+  min-height: 100vh;
 }
