@@ -8,6 +8,10 @@ import Meist from './pages/Meist';
 import { useState } from 'react';
 import Hinnad from './pages/Hinnad';
 import Poed from './pages/Poed';
+import Tooted from './pages/Tooted';
+import HaldaTooted from './pages/HaldaTooted';
+import YksikToode from './pages/YksikToode';
+import MuudaToode from './pages/MuudaToode';
 
 function App() {
   const [teema, uuendaTeema] = useState("hele-leht");
@@ -46,6 +50,14 @@ function App() {
         <button className="nupp">Poed</button>
       </Link>
 
+      <Link to="/tooted">
+        <button className="nupp">Tooted</button>
+      </Link>
+
+      <Link to="/halda">
+        <button className="nupp">Halda tooteid</button>
+      </Link>
+
       <Routes>
         {/* <Route path="" element={ <Navigate to="/avaleht" /> } /> */}
         <Route path="" element={ <Avaleht /> } />
@@ -55,6 +67,10 @@ function App() {
         <Route path="meist" element={ <Meist /> } />
         <Route path="hinnad" element={ <Hinnad /> } />
         <Route path="poed" element={ <Poed /> } />
+        <Route path="tooted" element={ <Tooted /> } />
+        <Route path="halda" element={ <HaldaTooted /> } />
+        <Route path="toode/:index" element={ <YksikToode /> } />
+        <Route path="muuda/:index" element={ <MuudaToode /> } />
       </Routes>
     </div>
   );

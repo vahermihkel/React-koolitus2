@@ -26,13 +26,18 @@ function Meist() {
     uuendaTootajad(vastus);
   }
 
+  const kustuta = (jrkNr) => {
+    tootajad.splice(jrkNr, 1); // splice kustutab
+    uuendaTootajad(tootajad.slice()); // slice teeb koopia ja võimaldab uuendada
+  }
+
   return (
     <div>
       <button onClick={sorteeriEesnimi}>Sorteeri eesnime esitähe järgi</button>
       <button onClick={sorteeriTahed}>Sorteeri tähtede arvu järgi</button>
       <button onClick={filtreeriVah10Tahte}>Filtreeri kellel on 10 või rohkem tähte</button>
       <div>Töötajad:</div>
-      {tootajad.map(e => <div>{e}</div>)}
+      {tootajad.map((e, jrkNr) => <div>{e} <button onClick={() => kustuta(jrkNr)}>x</button> </div>)}
       {/* <div>Signe Riisalo</div>
       <div>Riina Sikkut</div>
       <div>Maarjo Mändmaa</div>
