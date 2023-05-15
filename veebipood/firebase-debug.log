@@ -1,0 +1,38 @@
+[debug] [2023-05-05T08:30:15.570Z] ----------------------------------------------------------------------
+[debug] [2023-05-05T08:30:15.573Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\vahermih\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-05-05T08:30:15.573Z] CLI Version:   11.28.0
+[debug] [2023-05-05T08:30:15.573Z] Platform:      win32
+[debug] [2023-05-05T08:30:15.573Z] Node Version:  v16.13.1
+[debug] [2023-05-05T08:30:15.575Z] Time:          Fri May 05 2023 11:30:15 GMT+0300 (Ida-Euroopa suveaeg)
+[debug] [2023-05-05T08:30:15.575Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-05T08:30:15.581Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-05-05T08:30:15.692Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-05T08:30:15.693Z] > authorizing via signed-in user (reacmihkel@gmail.com)
+[debug] [2023-05-05T08:30:15.693Z] [iam] checking project mihkel-veebipood-react-03-23 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-05T08:30:15.695Z] > refreshing access token with scopes: []
+[debug] [2023-05-05T08:30:15.696Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-05-05T08:30:15.696Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-05T08:30:16.135Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-05-05T08:30:16.136Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-05T08:30:16.152Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/mihkel-veebipood-react-03-23:testIamPermissions [none]
+[debug] [2023-05-05T08:30:16.152Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/mihkel-veebipood-react-03-23:testIamPermissions x-goog-quota-user=projects/mihkel-veebipood-react-03-23
+[debug] [2023-05-05T08:30:16.152Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mihkel-veebipood-react-03-23:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-05T08:30:16.208Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-05-05T08:30:16.208Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-05-05T08:30:17.326Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/mihkel-veebipood-react-03-23:testIamPermissions 200
+[debug] [2023-05-05T08:30:17.327Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/mihkel-veebipood-react-03-23:testIamPermissions {}
+[debug] [2023-05-05T08:30:17.327Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project mihkel-veebipood-react-03-23:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2023-05-05T08:30:17.329Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mihkel-veebipood-react-03-23 [none]
+[debug] [2023-05-05T08:30:17.866Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mihkel-veebipood-react-03-23 403
+[debug] [2023-05-05T08:30:17.866Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mihkel-veebipood-react-03-23 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2023-05-05T08:30:17.867Z] HTTP Error: 403, The caller does not have permission
+[debug] [2023-05-05T08:30:17.871Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\vahermih\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\vahermih\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project mihkel-veebipood-react-03-23. Please make sure the project exists and your account has permission to access it.

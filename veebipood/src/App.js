@@ -14,13 +14,23 @@ import YksikToode from './pages/YksikToode';
 import MuudaToode from './pages/MuudaToode';
 
 function App() {
-  const [teema, uuendaTeema] = useState("hele-leht");
+  const [teema, uuendaTeema] = useState(localStorage.getItem("theme") || "hele-leht");
+
+  const muudaTeemaTume = () => {
+    uuendaTeema("tume-leht");
+    localStorage.setItem("theme", "tume-leht");
+  }
+
+  const muudaTeemaHele = () => {
+    uuendaTeema("hele-leht");
+    localStorage.setItem("theme", "hele-leht");
+  }
 
   return (
     <div className={teema}>
     {/* <div className={teema === "hele" ? "hele-leht" : "tume-leht" }> */}
-      {teema === "hele-leht" && <button onClick={() => uuendaTeema("tume-leht")}>Tume leht</button>}
-      {teema === "tume-leht" && <button onClick={() => uuendaTeema("hele-leht")}>Hele leht</button>}
+      {teema === "hele-leht" && <button onClick={muudaTeemaTume}>Tume leht</button>}
+      {teema === "tume-leht" && <button onClick={muudaTeemaHele}>Hele leht</button>}
 
       <Link to="/">
         <img className="pilt" alt="" src="https://upload.wikimedia.org/wikipedia/en/9/99/Nobe_GT100.jpg" />
@@ -77,3 +87,9 @@ function App() {
 }
 
 export default App;
+
+// 08.05 E 13.00-16.15
+// 15.05 E 13.00-16.15
+// 17.05 K 13.00-16.15
+// 22.05 E 13.00-16.15
+// 24.05 K 13.00-16.15
