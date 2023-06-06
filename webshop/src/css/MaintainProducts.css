@@ -1,0 +1,18 @@
+th, td {
+  border: 1px solid black;
+}
+
+td img {
+  width: 100px;
+  height: 100px;
+}
+
+.active {
+  background-color: rgb(234, 240, 234);
+  border: 1px solid green;
+}
+
+.inactive {
+  background-color: rgb(246, 240, 240);
+  border: 1px solid red;
+}

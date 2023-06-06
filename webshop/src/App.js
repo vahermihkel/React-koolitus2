@@ -58,10 +58,10 @@ function App() {
         <Route path='contact' element={ <ContactUs /> } />
         <Route path='shops' element={ <Shops /> } />
         <Route path='cart' element={ <Cart /> } />
-        <Route path='product' element={ <SingleProduct /> } />
+        <Route path='product/:productId' element={ <SingleProduct /> } />
         <Route path='admin' element={ <AdminHome /> } />
         <Route path='admin/add-product' element={ <AddProduct /> } />
-        <Route path='admin/edit-product' element={ <EditProduct /> } />
+        <Route path='admin/edit-product/:id' element={ <EditProduct /> } />
         <Route path='admin/maintain-products' element={ <MaintainProducts /> } />
         <Route path='admin/maintain-categories' element={ <MaintainCategories /> } />
       </Routes>
