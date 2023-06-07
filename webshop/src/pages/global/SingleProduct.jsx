@@ -6,6 +6,8 @@ function SingleProduct() {
   const params = useParams();
   const found = productsFromFile.find(product => product.id === Number(params.productId));
 
+  // lisame siit ka ostukorvi
+
   return (
     <div>
       { found === undefined ? <div>Product not found!</div> : 

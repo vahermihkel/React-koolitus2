@@ -25,6 +25,13 @@ function HomePage() {
     setProducts(products.slice());
   }
 
+  const addToCart = (productClicked) => {
+    // cartFromFile.push(productClicked);
+    const cartLS = JSON.parse(localStorage.getItem("cart")) || [];
+    cartLS.push(productClicked);
+    localStorage.setItem("cart", JSON.stringify(cartLS));
+  }
+
   return (
     <div>
       <button onClick={sortAZ}>Sort A to Z</button>
@@ -38,7 +45,7 @@ function HomePage() {
             <div>{product.name}</div>
             <div>{product.price}</div>
           </Link>
-          <button>Add to cart</button>
+          <button onClick={() => addToCart(product)}>Add to cart</button>
         </div>
       )}
     </div>
